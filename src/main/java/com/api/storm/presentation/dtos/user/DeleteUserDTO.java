@@ -1,11 +1,12 @@
-package com.api.storm.application.dtos.address;
+package com.api.storm.presentation.dtos.user;
 
 import java.util.UUID;
 
-public class DeleteAddressDTO {
+public class DeleteUserDTO {
+
     private UUID id;
 
-    public DeleteAddressDTO(UUID id) {
+    public DeleteUserDTO(UUID id) {
         this.id = id;
     }
 

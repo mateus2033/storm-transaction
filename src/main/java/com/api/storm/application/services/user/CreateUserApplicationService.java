@@ -1,7 +1,7 @@
 package com.api.storm.application.services.user;
 
 import com.api.storm.application.intefaces.user.CreateUserApplicationInterface;
-import com.api.storm.application.dtos.user.CreateUserDTO;
+import com.api.storm.presentation.dtos.user.CreateUserDTO;
 import com.api.storm.domain.model.User;
 import com.api.storm.domain.services.user.CreateUserDomainService;
 import org.springframework.stereotype.Service;

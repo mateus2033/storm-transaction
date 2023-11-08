@@ -1,7 +1,7 @@
-package com.api.storm.controllers;
+package com.api.storm.presentation.controllers;
 
 import com.api.storm.application.services.user.*;
-import com.api.storm.application.dtos.user.CreateUserDTO;
+import com.api.storm.presentation.dtos.user.CreateUserDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

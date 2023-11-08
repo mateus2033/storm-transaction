@@ -1,4 +1,4 @@
-package com.api.storm.application.dtos.address;
+package com.api.storm.presentation.dtos.address;
 
 import java.util.UUID;
 

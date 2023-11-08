@@ -1,4 +1,4 @@
-package com.api.storm.application.dtos.user;
+package com.api.storm.presentation.dtos.user;
 
 public class ListUserDTO {
 
