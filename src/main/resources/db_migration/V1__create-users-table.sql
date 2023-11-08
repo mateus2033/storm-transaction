@@ -1,0 +1,2 @@
+INSERT INTO users (id, cellphone, cpf, data_birth, email, image, last_name, name, password)VALUES
+('550e8400-e29b-41d4-a716-446655440000','+1234567890','123.456.789-01','1990-01-15 10:30:00','exemplo@email.com','image1.jpg','Belmont','Sara','123456');

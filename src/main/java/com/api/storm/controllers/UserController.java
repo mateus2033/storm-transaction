@@ -1,11 +1,10 @@
 package com.api.storm.controllers;
 
 import com.api.storm.application.services.user.*;
-import com.api.storm.application.validation.user.CreateUserValidationObject;
+import com.api.storm.application.dtos.user.CreateUserDTO;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -33,8 +32,8 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> createUser(@RequestBody @Valid CreateUserValidationObject createUserValidationObject) {
-        return null;
+    public ResponseEntity<Object> createUser(@RequestBody CreateUserDTO userDTO) throws Exception {
+        var user = this.createUserApplication.execute(userDTO);
+        return ResponseEntity.status(HttpStatus.OK).body(user);
     }
-
 }

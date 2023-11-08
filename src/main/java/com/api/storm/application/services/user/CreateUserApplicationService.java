@@ -1,9 +1,12 @@
 package com.api.storm.application.services.user;
 
 import com.api.storm.application.intefaces.user.CreateUserApplicationInterface;
+import com.api.storm.application.dtos.user.CreateUserDTO;
 import com.api.storm.domain.model.User;
 import com.api.storm.domain.services.user.CreateUserDomainService;
 import org.springframework.stereotype.Service;
+import javax.transaction.Transactional;
+import java.util.Optional;
 
 @Service
 public class CreateUserApplicationService implements CreateUserApplicationInterface {
@@ -14,8 +17,8 @@ public class CreateUserApplicationService implements CreateUserApplicationInterf
         this.createUserDomain = createUserDomain;
     }
 
-    @Override
-    public User execute(User user) {
+    @Transactional
+    public Optional<User> execute(CreateUserDTO user) {
         return null;
     }
 }
