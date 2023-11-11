@@ -4,5 +4,5 @@ import com.api.storm.domain.model.User;
 import java.util.Optional;
 
 public interface GetUserByCpfDomainInterface {
-    User execute(String cpf) throws Exception;
+    Optional<User> execute(String cpf) throws Exception;
 }

@@ -32,7 +32,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> createUser(@RequestBody CreateUserDTO userDTO) throws Exception {
+    public ResponseEntity<Object> createUser(@RequestBody CreateUserDTO userDTO) {
         var user = this.createUserApplication.execute(userDTO);
         return ResponseEntity.status(HttpStatus.OK).body(user);
     }

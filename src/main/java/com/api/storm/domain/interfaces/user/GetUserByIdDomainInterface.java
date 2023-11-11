@@ -6,5 +6,5 @@ import java.util.UUID;
 
 public interface GetUserByIdDomainInterface {
 
-    Optional<User> execute(UUID id) throws Exception;
+    Optional<User> execute(UUID id);
 }

@@ -37,6 +37,18 @@ public class User implements Serializable {
     @Column(nullable = false, length = 255)
     private String password;
 
+    public User(UUID id, String name, String lastName, String cpf, Date dataBirth, String cellphone, String image, String email, String password) {
+        this.id = id;
+        this.name = name;
+        this.lastName = lastName;
+        this.cpf = cpf;
+        this.dataBirth = dataBirth;
+        this.cellphone = cellphone;
+        this.image = image;
+        this.email = email;
+        this.password = password;
+    }
+
     public UUID getId() {
         return id;
     }

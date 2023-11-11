@@ -5,6 +5,7 @@ import com.api.storm.domain.model.User;
 import com.api.storm.domain.repositories.UserRepository;
 import com.api.storm.utils.message.user.UserMessage;
 import org.springframework.stereotype.Service;
+import java.util.Optional;
 
 @Service
 public class GetUserByCpfDomainService implements GetUserByCpfDomainInterface {
@@ -14,11 +15,9 @@ public class GetUserByCpfDomainService implements GetUserByCpfDomainInterface {
         this.userRepository = userRepository;
     }
 
-    public User execute(String cpf) throws Exception {
-        User user = this.userRepository.findUserByCpf(cpf);
-        if(user == null) {
-            throw new Exception(UserMessage.USER_NOT_FOUND);
-        }
-        return user;
+    public Optional<User> execute(String cpf) {
+        return Optional.ofNullable(Optional.ofNullable(userRepository.findUserByCpf(cpf))
+                .orElseThrow(() -> new RuntimeException(UserMessage.USER_NOT_FOUND))
+        );
     }
 }

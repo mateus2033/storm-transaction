@@ -5,6 +5,7 @@ import com.api.storm.domain.model.User;
 import com.api.storm.domain.repositories.UserRepository;
 import com.api.storm.utils.message.user.UserMessage;
 import org.springframework.stereotype.Service;
+import java.util.Optional;
 
 @Service
 public class GetUserByEmailDomainService implements GetUserByEmailDomainInterface {
@@ -14,11 +15,9 @@ public class GetUserByEmailDomainService implements GetUserByEmailDomainInterfac
         this.userRepository = userRepository;
     }
 
-    public User execute(String email) throws Exception {
-        User user = this.userRepository.findUserByEmail(email);
-        if(user == null) {
-            throw new Exception(UserMessage.EMAIL_REGISTERED);
-        }
-        return user;
+    public Optional<User> execute(String email) {
+        return Optional.ofNullable(Optional.ofNullable(userRepository.findUserByEmail(email))
+                .orElseThrow(() -> new RuntimeException(UserMessage.USER_NOT_FOUND))
+        );
     }
 }
