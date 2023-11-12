@@ -4,6 +4,7 @@ public class UserMessage {
 
     public static final String REQUIRED = "required";
     public static final String MAX_LENGTH_TWO_HUNDRED = "max length at 200 character";
+    public static final String MIN_LENGTH_EIGHT = "max length at 8 character";
     public static final String MAX_LENGTH_ONE_HUNDRED = "max length at 100 character";
     public static final String MAX_LENGTH_FOURTEEN = "max length at 14 character";
     public static final String MAX_LENGTH_TWENTY = "max length at 20 character";
@@ -17,4 +18,9 @@ public class UserMessage {
     public static final String ONLY_BOOLEAN = "must be value boolean";
     public static final String USER_NOT_FOUND = "user not found";
     public static final String EMAIL_REGISTERED = "e-mail already registered";
+    public static final String EMAIL_INVALID = "e-mail invalid";
+    public static final String INVALID_CPF = "invalid cpf";
+    public static final String INVALID_DATA = "invalid date";
+    public static final String INVALID_CELLPHONE_NUMBER = "invalid cellphone number";
+
 }
